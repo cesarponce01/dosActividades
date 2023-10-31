@@ -10,7 +10,7 @@ class segundaActividad : AppCompatActivity() {
 
     lateinit var textView2: TextView
 
-    //@SuppressLint("MissingInflatedId")
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.segunda_actividad)

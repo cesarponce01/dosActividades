@@ -12,8 +12,10 @@ class MainActivity : AppCompatActivity() {
 
      //lateinit var  textViewEtiqueta:TextView
      lateinit var editTextNombre:EditText
+     lateinit var etApellido:EditText
 
      lateinit var nombre:String
+    lateinit var apellido:String
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,10 +23,34 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //textViewEtiqueta=findViewById(R.id.textView)
-        editTextNombre=findViewById(R.id.editTextNombre)
+        editTextNombre=findViewById(R.id.etNombre)
+        etApellido=findViewById(R.id.etApellido)
 
 
     }
+    fun onAltaUsuario(view: View){
+       nombre=editTextNombre.text.toString()
+        apellido=etApellido.text.toString()
+        //textViewEtiqueta.text="Hola"+nombre
+        /*
+        var mi_intent=Intent(this,secondActivity::class.java)
+        startActivity(mi_intent)
+
+        */
+
+        var usuario=Usuario(nombre,apellido)
+                                                        // Se direcciona la segunda actividad
+        var mi_intent2:Intent=Intent(this,segundaActividad::class.java)
+
+        mi_intent2.putExtra("nombre",nombre)
+        mi_intent2.putExtra("apellido",apellido)
+
+        mi_intent2.putExtras("claseUsuario",usuario)
+
+        startActivity(mi_intent2)
+    }
+
+    /*
 
     override fun onStart() {
         super.onStart()
@@ -50,21 +76,5 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
     }
-
-
-    fun onCambiarTexto(view: View){
-       nombre=editTextNombre.text.toString()
-        //textViewEtiqueta.text="Hola"+nombre
-        /*
-        var mi_intent=Intent(this,secondActivity::class.java)
-        startActivity(mi_intent)
-
-        */
-                                                        // Se direcciona la segunda actividad
-        var mi_intent2:Intent=Intent(this,segundaActividad::class.java)
-
-        mi_intent2.putExtra("resultado",nombre)
-
-        startActivity(mi_intent2)
-    }
+*/
 }
