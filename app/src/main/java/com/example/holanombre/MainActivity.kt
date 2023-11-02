@@ -1,12 +1,12 @@
 package com.example.holanombre
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import com.example.holanombre.actividades.segundaActividad
+import com.example.holanombre.otraCarpeta.Usuario
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,9 +15,9 @@ class MainActivity : AppCompatActivity() {
      lateinit var etApellido:EditText
 
      lateinit var nombre:String
-    lateinit var apellido:String
+     lateinit var apellido:String
 
-    @SuppressLint("MissingInflatedId")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -28,8 +28,10 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+
     fun onAltaUsuario(view: View){
-       nombre=editTextNombre.text.toString()
+        nombre=editTextNombre.text.toString()
         apellido=etApellido.text.toString()
         //textViewEtiqueta.text="Hola"+nombre
         /*
@@ -38,17 +40,17 @@ class MainActivity : AppCompatActivity() {
 
         */
 
-        var usuario=Usuario(nombre,apellido)
+       var usuario= Usuario(nombre,apellido)
                                                         // Se direcciona la segunda actividad
-        var mi_intent2:Intent=Intent(this,segundaActividad::class.java)
+        var mi_intent2=Intent(this,segundaActividad::class.java)
 
-        mi_intent2.putExtra("nombre",nombre)
-        mi_intent2.putExtra("apellido",apellido)
+        /*mi_intent2.putExtra("nombre",nombre)
+        mi_intent2.putExtra("apellido",apellido)*/
 
-        mi_intent2.putExtras("claseUsuario",usuario)
+        mi_intent2.putExtra("claseUsuario",usuario.getBundle())
 
         startActivity(mi_intent2)
-    }
+        }
 
     /*
 
@@ -78,3 +80,5 @@ class MainActivity : AppCompatActivity() {
     }
 */
 }
+
+
