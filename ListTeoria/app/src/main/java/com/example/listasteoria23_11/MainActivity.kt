@@ -2,12 +2,38 @@ package com.example.listasteoria23_11
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Adapter
+import android.widget.AdapterView
+import android.widget.ListView
+import androidx.constraintlayout.helper.widget.Carousel
+import androidx.recyclerview.widget.RecyclerView
+import java.util.Objects
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        var lvSemana = findViewById<ListView>(R.id.lvSemana)
+
+        lvSemana.onItemClickListener = object : AdapterView.OnItemClickListener{
+            override fun onItemClick(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                TODO("Not yet implemented")
+            }
+        }
+
+    }
+}
+
+
+
+        /*
         val numbers: List<Int> = listOf(1, 2, 3, 4, 5, 6)
 
         var valor=numbers[0]
@@ -56,6 +82,4 @@ class MainActivity : AppCompatActivity() {
         nuevaListaPersona.get(1).nombre="César"
         var otraListaPersona:ArrayList<Persona> = ArrayList(mutablePersona)
 
-
-    }
-}
+    */
