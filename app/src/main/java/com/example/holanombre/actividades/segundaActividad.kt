@@ -6,8 +6,9 @@ import android.widget.TextView
 import com.example.holanombre.R
 import com.example.holanombre.otraCarpeta.Usuario
 
-lateinit var textView2: TextView
+
 class segundaActividad : AppCompatActivity() {
+    lateinit var textView2: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
