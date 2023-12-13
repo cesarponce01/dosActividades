@@ -3,24 +3,19 @@ package com.example.holanombre.otraCarpeta
 import android.os.Bundle
 
 class Usuario{
-    
-    var nombre: String
-        get() {
-            return nombre
-        }
-    
+
+
+    var nombre: String = ""
+        get() = field
         set(value) {
-            nombre=value
-        }
-    var apellido: String
-        get() {
-            return apellido
+            field = value
         }
 
+    var apellido: String = ""
+        get() = field
         set(value) {
-            apellido=value
+            field = value
         }
-       
            
         constructor(nombre: String, apellido: String) {
             this.nombre = nombre

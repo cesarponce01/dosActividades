@@ -15,8 +15,6 @@ class segundaActividad : AppCompatActivity() {
         setContentView(R.layout.segunda_actividad)
 
         textView2=findViewById(R.id.tvSecond)
-        var nombre= intent.getStringExtra("nombre")
-        var apellido=intent.getStringExtra("apellido")
 
         var bundleUsuario=intent.getBundleExtra("claseUsuario")
         var usuario= Usuario(bundleUsuario!!)
